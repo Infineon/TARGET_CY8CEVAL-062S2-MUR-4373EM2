@@ -34,7 +34,9 @@ endif
 BSP_COMPONENTS:=CM0P_SLEEP WIFI_INTERFACE_SDIO
 
 # Any additional defines to apply when using this board.
+# 43732AE does not support default country Australia
 BSP_DEFINES:=CY_USING_HAL
+BSP_DEFINES+=CY_WIFI_COUNTRY=WHD_COUNTRY_UNITED_STATES
 
 # Ignore the default CYW4373 clm blob. This BSP uses the CLM blob for Murata LBEE5PK2AE M.2 radio module
 CY_IGNORE+=$(SEARCH_wifi-host-driver)/WiFi_Host_Driver/resources/clm/COMPONENT_4373/4373A0_clm_blob.c \
@@ -61,5 +63,5 @@ DEVICE_CYW4373EUBGT_DIE:=4373A0A
 DEVICE_CYW4373EUBGT_FLASH_KB:=0
 DEVICE_CYW4373EUBGT_SRAM_KB:=896
 DEVICE_LIST:=CY8C624ABZI-S2D44 CYW4373EUBGT
-DEVICE_TOOL_IDS:=bsp-assistant bt-configurator capsense-configurator capsense-tuner device-configurator dfuh-tool fw-loader library-manager lin-configurator ml-configurator project-creator qspi-configurator seglcd-configurator smartio-configurator usbdev-configurator
+DEVICE_TOOL_IDS:=bsp-assistant bt-configurator capsense-configurator capsense-tuner device-configurator dfuh-tool library-manager lin-configurator ml-configurator project-creator qspi-configurator seglcd-configurator smartio-configurator usbdev-configurator
 RECIPE_DIR:=$(SEARCH_recipe-make-cat1a)
